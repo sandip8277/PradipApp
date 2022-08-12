@@ -53,6 +53,11 @@ namespace QuickReviewReports
                LastName = dt.Rows[0]["LastName"].ToString();
                IsAdminUser = Convert.ToBoolean(dt.Rows[0]["IsAdminUser"]);
             }
+            
+            if(dt.Rows.Count == 0)
+            {
+                MessageBox.Show("You don't have access to this application.Please contact administrator.");
+            }
 
             if (!IsAdminUser)
             {
