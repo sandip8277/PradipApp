@@ -56,6 +56,7 @@ namespace QuickReviewReports
             
             if(dt.Rows.Count == 0)
             {
+                //If no records found
                 MessageBox.Show("You don't have access to this application.Please contact administrator.");
             }
 
