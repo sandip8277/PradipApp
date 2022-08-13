@@ -29,48 +29,68 @@ namespace QuickReviewReports
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ConnectionHelper connectionHelperObj=new ConnectionHelper();
-            SqlConnection conn = connectionHelperObj.GetSqlConnection();
-            conn.Open();
-
-            string userName=txtuserName.Text;
-            string password = txtpassword.Text;
-
-
-            string storedProcedureName = "spGetUserDetails";
-            SqlDataAdapter da = new SqlDataAdapter(storedProcedureName, conn);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-            da.SelectCommand.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar)).Value = userName;
-            da.SelectCommand.Parameters.Add(new SqlParameter("@password", SqlDbType.VarChar)).Value = password;
-
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if(dt.Rows.Count > 0)
+            lblWarning.Text = "";
+            bool flag= validateData();
+            if (flag)
             {
-               UserId = dt.Rows[0]["UserId"].ToString();
-               FirstName = dt.Rows[0]["FirstName"].ToString();
-               LastName = dt.Rows[0]["LastName"].ToString();
-               IsAdminUser = Convert.ToBoolean(dt.Rows[0]["IsAdminUser"]);
+                ConnectionHelper connectionHelperObj = new ConnectionHelper();
+                SqlConnection conn = connectionHelperObj.GetSqlConnection();
+                conn.Open();
+
+                string userName = txtuserName.Text;
+                string password = txtpassword.Text;
+
+
+                string storedProcedureName = "spGetUserDetails";
+                SqlDataAdapter da = new SqlDataAdapter(storedProcedureName, conn);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                da.SelectCommand.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar)).Value = userName;
+                da.SelectCommand.Parameters.Add(new SqlParameter("@password", SqlDbType.VarChar)).Value = password;
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    UserId = dt.Rows[0]["UserId"].ToString();
+                    FirstName = dt.Rows[0]["FirstName"].ToString();
+                    LastName = dt.Rows[0]["LastName"].ToString();
+                    IsAdminUser = Convert.ToBoolean(dt.Rows[0]["IsAdminUser"]);
+                }
+
+                if (dt.Rows.Count == 0)
+                {
+                    //If no records found
+                    lblWarning.Text = "You don't have access to this application.Please contact administrator.";
+                }
+
+                if (!IsAdminUser)
+                {
+                    lblWarning.Text = "You don't have access to this application.Please contact administrator.";
+                }
+
+
+                //   this.Close();
+                //   DashboardForm dashboardForm = new DashboardForm();
+                //  dashboardForm.Show();
             }
-            
-            if(dt.Rows.Count == 0)
+            else
             {
-                //If no records found
-                MessageBox.Show("You don't have access to this application.Please contact administrator.");
+                //if flag false;
+                lblWarning.Text = "Please enter username or password.";
             }
-
-            if (!IsAdminUser)
-            {
-                MessageBox.Show("You don't have access to this application.Please contact administrator.");
-            }
-
-
-            //   this.Close();
-            //   DashboardForm dashboardForm = new DashboardForm();
-            //  dashboardForm.Show();
         }
 
+        public bool validateData()
+        {
+            bool flag = true;
+            if(txtuserName.Text=="" || txtpassword.Text == "")
+            {
+                flag = false;
+            }
+
+            return flag;
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

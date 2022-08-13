@@ -35,6 +35,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblWelcomeAdminPortal = new System.Windows.Forms.Label();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtuserName
@@ -100,11 +101,20 @@
             this.lblWelcomeAdminPortal.TabIndex = 6;
             this.lblWelcomeAdminPortal.Text = "Welcome to Admin Portal";
             // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.Location = new System.Drawing.Point(201, 415);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(0, 20);
+            this.lblWarning.TabIndex = 7;
+            // 
             // QuickReviewLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 447);
+            this.ClientSize = new System.Drawing.Size(900, 504);
+            this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.lblWelcomeAdminPortal);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
@@ -129,6 +139,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblWelcomeAdminPortal;
+        private System.Windows.Forms.Label lblWarning;
     }
 }
 
