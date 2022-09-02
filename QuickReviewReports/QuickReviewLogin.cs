@@ -58,7 +58,7 @@ namespace QuickReviewReports
                     IsAdminUser = Convert.ToBoolean(dt.Rows[0]["IsAdminUser"]);
                 }
 
-                if (dt.Rows.Count == 0)
+               else if (dt.Rows.Count == 0)
                 {
                     //If no records found
                     lblWarning.Text = "You don't have access to this application.Please contact administrator.";
@@ -68,7 +68,11 @@ namespace QuickReviewReports
                 {
                     lblWarning.Text = "You don't have access to this application.Please contact administrator.";
                 }
-
+                if(IsAdminUser && dt.Rows.Count>0)
+                {
+                    DashboardScreen objDashboardScreen = new DashboardScreen();
+                    objDashboardScreen.Show();
+                }
 
                 //   this.Close();
                 //   DashboardForm dashboardForm = new DashboardForm();

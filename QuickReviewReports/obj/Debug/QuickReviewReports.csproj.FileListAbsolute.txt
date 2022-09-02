@@ -18,3 +18,23 @@ D:\12 August Project\PradipApp\QuickReviewReports\bin\Debug\System.Security.Acce
 D:\12 August Project\PradipApp\QuickReviewReports\bin\Debug\System.Security.Permissions.xml
 D:\12 August Project\PradipApp\QuickReviewReports\bin\Debug\System.Security.Principal.Windows.xml
 D:\12 August Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.csproj.CopyComplete
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\QuickReviewReports.exe.config
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\QuickReviewReports.exe
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\QuickReviewReports.pdb
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\System.Security.AccessControl.dll
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\System.Security.Permissions.dll
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\System.Security.Principal.Windows.dll
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\System.Security.AccessControl.xml
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\System.Security.Permissions.xml
+D:\12-Aug Project\PradipApp\QuickReviewReports\bin\Debug\System.Security.Principal.Windows.xml
+D:\12-Aug Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.csproj.AssemblyReference.cache
+D:\12-Aug Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.DashboardScreen.resources
+D:\12-Aug Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.QuickReviewLogin.resources
+D:\12-Aug Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.Properties.Resources.resources
+D:\12-Aug Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.csproj.GenerateResource.cache
+D:\12-Aug Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.csproj.CoreCompileInputs.cache
+D:\12-Aug Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.csproj.CopyComplete
+D:\12-Aug Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.exe
+D:\12-Aug Project\PradipApp\QuickReviewReports\obj\Debug\QuickReviewReports.pdb
