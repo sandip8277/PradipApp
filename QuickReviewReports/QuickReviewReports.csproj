@@ -111,7 +111,6 @@
       <DependentUpon>ModifyPlants.cs</DependentUpon>
     </Compile>
     <Compile Include="openFileDialog1.cs" />
-    <Compile Include="PdfPCell.cs" />
     <Compile Include="PlantDetailsScreen.cs">
       <SubType>Form</SubType>
     </Compile>

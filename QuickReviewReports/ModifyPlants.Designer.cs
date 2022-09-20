@@ -41,9 +41,10 @@ namespace QuickReviewReports
             this.txtbMachineLocation = new System.Windows.Forms.TextBox();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPlantId = new System.Windows.Forms.ComboBox();
             this.lblmessage = new System.Windows.Forms.Label();
             this.lblwarning1 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -161,14 +162,14 @@ namespace QuickReviewReports
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbPlantId
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(341, 92);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(229, 24);
-            this.comboBox1.TabIndex = 13;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.OnPlantIdChanged);
+            this.cmbPlantId.FormattingEnabled = true;
+            this.cmbPlantId.Location = new System.Drawing.Point(341, 92);
+            this.cmbPlantId.Name = "cmbPlantId";
+            this.cmbPlantId.Size = new System.Drawing.Size(229, 24);
+            this.cmbPlantId.TabIndex = 13;
+            this.cmbPlantId.SelectedIndexChanged += new System.EventHandler(this.OnPlantIdChanged);
             // 
             // lblmessage
             // 
@@ -186,14 +187,26 @@ namespace QuickReviewReports
             this.lblwarning1.Size = new System.Drawing.Size(0, 17);
             this.lblwarning1.TabIndex = 15;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(537, 370);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(103, 38);
+            this.btnCancel.TabIndex = 16;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // ModifyPlants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 533);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblwarning1);
             this.Controls.Add(this.lblmessage);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbPlantId);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.txtbMachineLocation);
@@ -228,8 +241,9 @@ namespace QuickReviewReports
         private System.Windows.Forms.TextBox txtbMachineLocation;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPlantId;
         private System.Windows.Forms.Label lblmessage;
         private System.Windows.Forms.Label lblwarning1;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

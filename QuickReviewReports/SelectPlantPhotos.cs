@@ -84,11 +84,13 @@ namespace QuickReviewReports
             {
                 errorMsg.Add("Please Select Plant ID");
                 isValidateForm = false;
+               
             }
             if(txtbUploadPhotos.Text == null || txtbUploadPhotos.Text == "")
             {
                 errorMsg.Add("Please Select Image");
                 isValidateForm = false;
+                
             }
             if (isValidateForm)
             {
@@ -122,10 +124,18 @@ namespace QuickReviewReports
                     {
                         string warning = text + '\n';
                         lblwarning.Text += warning;
+                        
                     }
                 }
             }
            
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            PlantDetailsScreen ObjplantDetailsScreen = new PlantDetailsScreen();
+            ObjplantDetailsScreen.Show();
+            this.Close();
         }
     }
 }

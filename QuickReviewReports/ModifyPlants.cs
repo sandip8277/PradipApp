@@ -40,11 +40,11 @@ namespace QuickReviewReports
             dt.Rows.InsertAt(dr, 0);
 
 
-            comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "PlantId";
-            comboBox1.ValueMember = "PlantId";
+            cmbPlantId.DataSource = dt;
+            cmbPlantId.DisplayMember = "PlantId";
+            cmbPlantId.ValueMember = "PlantId";
 
-            comboBox1.SelectedItem = "0";
+            cmbPlantId.SelectedItem = "0";
 
         }
 
@@ -56,14 +56,14 @@ namespace QuickReviewReports
 
         private void OnPlantIdChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex > 0)
+            if (cmbPlantId.SelectedIndex > 0)
             {
                 ConnectionHelper connectionHelperObj = new ConnectionHelper();
                 conn = connectionHelperObj.GetSqlConnection();
                 conn.Open();
                 SqlDataAdapter da = new SqlDataAdapter("spGetPlantDetailsFromId", conn);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.Add(new SqlParameter("@PlantId", SqlDbType.Int)).Value = int.Parse(comboBox1.Text);
+                da.SelectCommand.Parameters.Add(new SqlParameter("@PlantId", SqlDbType.Int)).Value = int.Parse(cmbPlantId.Text);
 
                 DataTable dt = new DataTable();
 
@@ -92,7 +92,7 @@ namespace QuickReviewReports
                 DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand("[spModifyDetailsById]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@PlantId", comboBox1.Text);
+                cmd.Parameters.AddWithValue("@PlantId", cmbPlantId.Text);
                 cmd.Parameters.AddWithValue("@PlantName", txtbPlantName.Text);
                 cmd.Parameters.AddWithValue("@AreaName", txtbAreaName.Text);
                 cmd.Parameters.AddWithValue("@MachineName", txtbMachineName.Text);
@@ -128,8 +128,6 @@ namespace QuickReviewReports
                             else
                                 ClearAllText(c);
                         }
-
-
                     }
                 }
             }
@@ -143,7 +141,7 @@ namespace QuickReviewReports
         private bool validateData()
         {
             bool flag = true;
-            if (comboBox1.Text == "" || txtbPlantName.Text == "" || txtbAreaName.Text == "" || txtbMachineName.Text == "" || txtbMachineLocation.Text == "")
+            if (cmbPlantId.Text == "" || txtbPlantName.Text == "" || txtbAreaName.Text == "" || txtbMachineName.Text == "" || txtbMachineLocation.Text == "")
             {
                 flag = false;
             }
@@ -154,6 +152,13 @@ namespace QuickReviewReports
         private void ModifyPlants_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            PlantDetailsScreen ObjplantDetailsScreen = new PlantDetailsScreen();
+            ObjplantDetailsScreen.Show();
+            this.Close();
         }
     }
 }
