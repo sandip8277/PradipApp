@@ -76,6 +76,7 @@ namespace QuickReviewReports
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(343, 22);
             this.txtFilePath.TabIndex = 3;
+            this.txtFilePath.TextChanged += new System.EventHandler(this.txtFilePath_TextChanged);
             // 
             // lblReportPath
             // 
