@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -133,6 +132,11 @@ namespace QuickReviewReports
             {
                 lblMsg.Text = "All pdf are genereted successfully at provided folder path.";
             }
+        }
+
+        private void txtFilePath_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
   

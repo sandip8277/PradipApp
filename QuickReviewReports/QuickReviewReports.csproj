@@ -35,11 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="ChoETL, Version=1.2.1.48, Culture=neutral, PublicKeyToken=8138733ed69d3172, processorArchitecture=MSIL">
       <HintPath>packages\ChoETL.1.2.1.48\lib\net45\ChoETL.dll</HintPath>
     </Reference>
     <Reference Include="IronPdf, Version=2022.8.0.8138, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
       <HintPath>packages\IronPdf.Slim.2022.8.8138\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -91,6 +97,27 @@
     <Compile Include="DashboardScreen.Designer.cs">
       <DependentUpon>DashboardScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisplayPlantDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayPlantDetails.Designer.cs">
+      <DependentUpon>DisplayPlantDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PlantDetailsData.cs" />
+    <Compile Include="ModifyPlants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPlants.Designer.cs">
+      <DependentUpon>ModifyPlants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="openFileDialog1.cs" />
+    <Compile Include="PdfPCell.cs" />
+    <Compile Include="PlantDetailsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlantDetailsScreen.Designer.cs">
+      <DependentUpon>PlantDetailsScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\ConnectionHelper.cs" />
     <Compile Include="Model\PlantDetails.cs" />
     <Compile Include="QuickReviewLogin.cs">
@@ -101,8 +128,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectPlantPhotos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPlantPhotos.Designer.cs">
+      <DependentUpon>SelectPlantPhotos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DashboardScreen.resx">
       <DependentUpon>DashboardScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayPlantDetails.resx">
+      <DependentUpon>DisplayPlantDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPlants.resx">
+      <DependentUpon>ModifyPlants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantDetailsScreen.resx">
+      <DependentUpon>PlantDetailsScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuickReviewLogin.resx">
       <DependentUpon>QuickReviewLogin.cs</DependentUpon>
@@ -116,6 +158,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SelectPlantPhotos.resx">
+      <DependentUpon>SelectPlantPhotos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,10 +175,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DatabaseScripts\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="DatabaseScripts\master_scripts.sql" />
+    <Content Include="DatabaseScripts\table_script.sql" />
     <Content Include="Images\plant_image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
