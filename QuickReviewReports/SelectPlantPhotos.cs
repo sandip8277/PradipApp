@@ -127,11 +127,6 @@ namespace QuickReviewReports
             }
            
         }
-
-        private void errorList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
        
