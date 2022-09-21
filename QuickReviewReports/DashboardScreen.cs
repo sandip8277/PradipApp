@@ -138,6 +138,26 @@ namespace QuickReviewReports
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PlantPdfGenerationScreen ObjplantPdfGenerationScreen = new PlantPdfGenerationScreen();
+            ObjplantPdfGenerationScreen.Show();
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            QuickReviewLogin ObjquickReviewLogin = new QuickReviewLogin();
+            ObjquickReviewLogin.Show();
+            this.Close();
+
+        }
     }
   
 }

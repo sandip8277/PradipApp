@@ -119,6 +119,12 @@
     </Compile>
     <Compile Include="Helper\ConnectionHelper.cs" />
     <Compile Include="Model\PlantDetails.cs" />
+    <Compile Include="PlantPdfGenerationScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlantPdfGenerationScreen.Designer.cs">
+      <DependentUpon>PlantPdfGenerationScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuickReviewLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlantDetailsScreen.resx">
       <DependentUpon>PlantDetailsScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantPdfGenerationScreen.resx">
+      <DependentUpon>PlantPdfGenerationScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuickReviewLogin.resx">
       <DependentUpon>QuickReviewLogin.cs</DependentUpon>
@@ -174,10 +183,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DatabaseScripts\master_scripts.sql" />
-    <Content Include="DatabaseScripts\table_script.sql" />
+    <Content Include="DatabaseScripts\Plant_Details_table_script.sql" />
+    <Content Include="DatabaseScripts\SP_Script_Display.PlantDetailsInGrid.sql" />
+    <Content Include="DatabaseScripts\sp_Script_PlantPdf.sql" />
+    <Content Include="DatabaseScripts\SP_Script_PlantPhoto.sql" />
+    <Content Include="DatabaseScripts\Table_Script_ModifyDetails.sql" />
+    <Content Include="DatabaseScripts\table_Script_PlantPhoto.sql" />
     <Content Include="Images\plant_image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -41,6 +41,8 @@ namespace QuickReviewReports
             this.btnTargetPath = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.lblMsg = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDashboard
@@ -62,9 +64,10 @@ namespace QuickReviewReports
             // 
             // BrowseCSV
             // 
-            this.BrowseCSV.Location = new System.Drawing.Point(749, 183);
+            this.BrowseCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrowseCSV.Location = new System.Drawing.Point(751, 176);
             this.BrowseCSV.Name = "BrowseCSV";
-            this.BrowseCSV.Size = new System.Drawing.Size(75, 23);
+            this.BrowseCSV.Size = new System.Drawing.Size(125, 34);
             this.BrowseCSV.TabIndex = 2;
             this.BrowseCSV.Text = "Browse CSV";
             this.BrowseCSV.UseVisualStyleBackColor = true;
@@ -72,9 +75,10 @@ namespace QuickReviewReports
             // 
             // txtFilePath
             // 
+            this.txtFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilePath.Location = new System.Drawing.Point(377, 180);
             this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(343, 22);
+            this.txtFilePath.Size = new System.Drawing.Size(343, 26);
             this.txtFilePath.TabIndex = 3;
             this.txtFilePath.TextChanged += new System.EventHandler(this.txtFilePath_TextChanged);
             // 
@@ -89,16 +93,18 @@ namespace QuickReviewReports
             // 
             // txtTargetPath
             // 
+            this.txtTargetPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTargetPath.Location = new System.Drawing.Point(377, 247);
             this.txtTargetPath.Name = "txtTargetPath";
-            this.txtTargetPath.Size = new System.Drawing.Size(343, 22);
+            this.txtTargetPath.Size = new System.Drawing.Size(343, 26);
             this.txtTargetPath.TabIndex = 5;
             // 
             // btnGeneratePDFreport
             // 
-            this.btnGeneratePDFreport.Location = new System.Drawing.Point(377, 311);
+            this.btnGeneratePDFreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGeneratePDFreport.Location = new System.Drawing.Point(438, 301);
             this.btnGeneratePDFreport.Name = "btnGeneratePDFreport";
-            this.btnGeneratePDFreport.Size = new System.Drawing.Size(166, 23);
+            this.btnGeneratePDFreport.Size = new System.Drawing.Size(246, 36);
             this.btnGeneratePDFreport.TabIndex = 6;
             this.btnGeneratePDFreport.Text = "Generate PDF Report";
             this.btnGeneratePDFreport.UseVisualStyleBackColor = true;
@@ -106,12 +112,14 @@ namespace QuickReviewReports
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(596, 310);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(624, 359);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(109, 23);
+            this.btnCancel.Size = new System.Drawing.Size(109, 37);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // openFileDialog1
             // 
@@ -119,9 +127,10 @@ namespace QuickReviewReports
             // 
             // btnTargetPath
             // 
-            this.btnTargetPath.Location = new System.Drawing.Point(760, 248);
+            this.btnTargetPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTargetPath.Location = new System.Drawing.Point(760, 242);
             this.btnTargetPath.Name = "btnTargetPath";
-            this.btnTargetPath.Size = new System.Drawing.Size(225, 23);
+            this.btnTargetPath.Size = new System.Drawing.Size(225, 31);
             this.btnTargetPath.TabIndex = 8;
             this.btnTargetPath.Text = "Browse Target Path";
             this.btnTargetPath.UseVisualStyleBackColor = true;
@@ -130,14 +139,38 @@ namespace QuickReviewReports
             // lblMsg
             // 
             this.lblMsg.AutoSize = true;
-            this.lblMsg.Location = new System.Drawing.Point(377, 389);
+            this.lblMsg.Location = new System.Drawing.Point(207, 426);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(0, 17);
             this.lblMsg.TabIndex = 9;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(346, 359);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(232, 37);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Generate Plant PDF";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(1064, 12);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(106, 36);
+            this.btnLogOut.TabIndex = 11;
+            this.btnLogOut.Text = "LogOut";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // DashboardScreen
             // 
             this.ClientSize = new System.Drawing.Size(1182, 471);
+            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.btnTargetPath);
             this.Controls.Add(this.btnCancel);
@@ -170,5 +203,7 @@ namespace QuickReviewReports
         private System.Windows.Forms.Button btnTargetPath;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label lblMsg;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }
