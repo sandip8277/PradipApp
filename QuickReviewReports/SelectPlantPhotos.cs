@@ -98,25 +98,27 @@ namespace QuickReviewReports
                 conn = connectionHelperObj.GetSqlConnection();
                 conn.Open();
 
-                string image = txtbUploadPhotos.Text;
-                Bitmap bmp = new Bitmap(image);
-                FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read);
-                byte[] bimage = new byte[fs.Length];
-                fs.Read(bimage, 0, Convert.ToInt32(fs.Length));
-                fs.Close();
+                //string image = txtbUploadPhotos.Text;
+                //Bitmap bmp = new Bitmap(image);
+                //FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read);
+                //byte[] bimage = new byte[fs.Length];
+                //fs.Read(bimage, 0, Convert.ToInt32(fs.Length));
+                //fs.Close();
+
+                string strImage = ImageToBase64(txtbUploadPhotos.Text);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("spGetPlantPhoto", conn);
+                SqlCommand cmd = new SqlCommand("spSavePlantPhoto", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@PlantId", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
-                cmd.Parameters.AddWithValue("@Image", SqlDbType.Image).Value = bimage;
+                cmd.Parameters.AddWithValue("@Image", SqlDbType.NVarChar).Value = strImage;
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Image uploaded successfully.");
             }
             else
-            {
+                {
                 if (errorMsg.Count > 0)
                 {
                     lblwarning.Text = "";
@@ -136,6 +138,24 @@ namespace QuickReviewReports
             PlantDetailsScreen ObjplantDetailsScreen = new PlantDetailsScreen();
             ObjplantDetailsScreen.Show();
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public string ImageToBase64(string path)
+        {
+            using (System.Drawing.Image image = System.Drawing.Image.FromFile(path))
+            {
+                using (MemoryStream m = new MemoryStream())
+                {
+                    image.Save(m, image.RawFormat);
+                    byte[] imageBytes = m.ToArray();
+                    string base64String = Convert.ToBase64String(imageBytes);
+                    return base64String;
+                }
+            }
         }
     }
 }

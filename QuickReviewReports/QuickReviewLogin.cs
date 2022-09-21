@@ -70,19 +70,21 @@ namespace QuickReviewReports
                 }
                 if(IsAdminUser && dt.Rows.Count>0)
                 {
+                   
                     PlantDetailsScreen objPlantDetailsScreen = new PlantDetailsScreen();
                     objPlantDetailsScreen.Show();
+                    this.Close();
                     
                 }
+                
 
                 if (!IsAdminUser && dt.Rows.Count > 0)
                 {
                     DashboardScreen objDashboardScreen = new DashboardScreen();
                     objDashboardScreen.Show();
+                    
                 }
-                //   this.Close();
-                //   DashboardForm dashboardForm = new DashboardForm();
-                //  dashboardForm.Show();
+                
             }
             else
             {

@@ -88,6 +88,7 @@ namespace QuickReviewReports
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(261, 24);
             this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnSave
             // 
@@ -142,7 +143,7 @@ namespace QuickReviewReports
             this.Controls.Add(this.txtbUploadPhotos);
             this.Controls.Add(this.lblPlantId);
             this.Name = "SelectPlantPhotos";
-            this.Text = "SelectPlantPhotos";
+            this.Text = "Plant Photo";
             this.ResumeLayout(false);
             this.PerformLayout();
 
